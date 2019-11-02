@@ -1,0 +1,13 @@
+users
+    Id          ObjectId    PK
+    Email       String
+    Password    String
+
+cities
+    Id          ObjectId    PK
+    Name        String
+
+subscriptions
+    Id          ObjectId    PK
+    UserId      ObjectId    FK (users)
+    CityId      ObjectId    FK (cities)
