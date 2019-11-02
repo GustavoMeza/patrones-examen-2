@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Api.Models
 {
-    public class Subscription
+    public class Subscription : IWeatherCollection
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

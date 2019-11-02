@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Api.Models;
+using Api.Services;
 
 namespace Api
 {
@@ -29,7 +30,11 @@ namespace Api
         {
             services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
             services.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
-            
+
+            services.AddSingleton<UserService>();
+            services.AddSingleton<CityService>();
+            services.AddSingleton<SubscriptionService>();
+
             services.AddControllers();
         }
 
