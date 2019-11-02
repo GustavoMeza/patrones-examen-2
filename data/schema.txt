@@ -1,13 +1,19 @@
+Weather
+
+ConnString: mongodb://127.0.0.1:27017
+
+Collections:
+
 users
-    Id          ObjectId    PK
-    Email       String
-    Password    String
+    _id         ObjectId    PK
+    email       String
+    password    String
 
 cities
-    Id          ObjectId    PK
-    Name        String
+    _id         ObjectId    PK
+    name        String
 
 subscriptions
-    Id          ObjectId    PK
-    UserId      ObjectId    FK (users)
-    CityId      ObjectId    FK (cities)
+    _id         ObjectId    PK
+    userId      ObjectId    FK (users)
+    cityId      ObjectId    FK (cities)
